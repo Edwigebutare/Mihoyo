@@ -16,3 +16,4 @@ $loader->addNamespace('\Views', '/Views');
 $loader->addNamespace('\Services', '/Services');
 $loader->addNamespace('\Exceptions', '/Exceptions');
 $loader->addNamespace('\Config', '/Config');
+$loader->addNamespace('\League\Plates', '/Vendor/Plates/src');
