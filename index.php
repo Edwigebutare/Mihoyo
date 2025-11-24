@@ -16,4 +16,7 @@ $loader->addNamespace('\Views', '/Views');
 $loader->addNamespace('\Services', '/Services');
 $loader->addNamespace('\Exceptions', '/Exceptions');
 $loader->addNamespace('\Config', '/Config');
-$loader->addNamespace('\League\Plates', '/Vendor/Plates/src');
+//
+$templates = new Engine(__DIR__ . '/Views');
+// Rendre une vue
+echo $templates->render('home', ['title' => 'Page d\'accueil','message' => 'Bienvenue dans le projet Mihoyo !']);
