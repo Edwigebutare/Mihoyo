@@ -1,25 +1,27 @@
 <?php
 
-//Charger l'autoloader
+// Charger le fichier l'autoloader
 require_once __DIR__ . '/Helpers/Psr4AutoloaderClass.php';
 
-//Créer l'objet autoloader
+// Créer une instance de l'autoloader
 $loader = new Helpers\Psr4AutoloaderClass();
 
-//Enregistrer l'autoloader auprès de PHP
+// Enregistrer l'autoloader pour PHP
 $loader->register();
-
 $loader->addNamespace('\Helpers', '/Helpers');
+// Namespace Controller
 $loader->addNamespace('\Controllers', '/Controllers');
-$loader->addNamespace('\Models', '/Models');
-$loader->addNamespace('\Views', '/Views');
-$loader->addNamespace('\Services', '/Services');
-$loader->addNamespace('\Exceptions', '/Exceptions');
-$loader->addNamespace('\Config', '/Config');
 // Inclure Plates pour la gestion des templates
-require_once __DIR__ . 'Vendor/Plates/src/Engine.php';
+$loader->addNamespace('\League\Plates','/Vendor/Plates/src');
 
+// Import du moteur de template plates
 use League\Plates\Engine;
-$templates = new Engine(__DIR__ . '/Views');
-// Rendre une vue
-echo $templates->render('home', ['title' => 'Page d\'accueil','message' => 'Bienvenue dans le projet Mihoyo !']);
+
+// Initialisation de l'engine avec le dossier Views
+$engine = new Engine(__DIR__ . '/Views');
+
+// Appel du contrôleur principal
+use Controllers\MainController;
+$controller = new MainController($engine);
+// Appel de la méthode index pour afficher la page
+$controller->index();

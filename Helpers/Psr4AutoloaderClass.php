@@ -1,7 +1,7 @@
 <?php
 
 namespace Helpers;
-
+// Le but : que PHP charge automatiquement les classes de tes différents dossiers quand on les utilises
 /**
  * An example of a general-purpose implementation that includes the optional
  * functionality of allowing multiple base directories for a single namespace
