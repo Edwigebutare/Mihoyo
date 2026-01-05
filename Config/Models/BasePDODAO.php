@@ -1,6 +1,9 @@
 <?php
 namespace Models;
 
+use PDO;
+use Config\Config;
+
 class BasePDODAO {
     private PDO $db;
 
