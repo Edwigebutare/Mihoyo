@@ -13,6 +13,12 @@ $loader->addNamespace('\Helpers', '/Helpers');
 $loader->addNamespace('\Controllers', '/Controllers');
 // Inclure Plates pour la gestion des templates
 $loader->addNamespace('\League\Plates','/Vendor/Plates/src');
+// Namespace Models
+$loader->addNamespace('\Models','/Models');
+// Namespace Service
+$loader->addNamespace('\Service','/Service');
+// Namespace Config
+$loader->addNamespace('\Config','/Config');
 
 // Import du moteur de template plates
 use League\Plates\Engine;

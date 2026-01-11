@@ -10,7 +10,7 @@ class Personnage
     private string $unitclass;
     private int $rarity;
     private ?string $origin = null;
-    private string $urlImg;
+    private string $url_img;
 
     // Getters & Setters
 
@@ -66,7 +66,7 @@ class Personnage
         return $this->urlImg;
     }
 
-    public function setUrlImg(string $urlImg): void {
-        $this->urlImg = $urlImg;
+    public function setUrlImg(string $url_img): void {
+        $this->urlImg = $url_img;
     }
 }

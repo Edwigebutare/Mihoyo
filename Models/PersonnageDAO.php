@@ -25,7 +25,7 @@ class PersonnageDAO extends BasePDODAO
                 $personnage->setUnitclass($row['unitclass']);
                 $personnage->setRarity((int)$row['rarity']);
                 $personnage->setOrigin($row['origin']);
-                $personnage->setUrlImg($row['urlImg']);
+                $personnage->setUrlImg($row['url_img']);
 
                 $personnages[] = $personnage;
             }
@@ -51,7 +51,7 @@ class PersonnageDAO extends BasePDODAO
                 $personnage->setUnitclass($row['unitclass']);
                 $personnage->setRarity((int)$row['rarity']);
                 $personnage->setOrigin($row['origin']);
-                $personnage->setUrlImg($row['urlImg']);
+                $personnage->setUrlImg($row['url_img']);
 
                 return $personnage;
             }

@@ -2,10 +2,11 @@
 namespace Models;
 
 use PDO;
+use PDOStatement;
 use Config\Config;
 
 class BasePDODAO {
-    private PDO $db;
+    private ?PDO $db = null;
 
      // Instancie et retourne la connexion PDO
     private function getDB() : PDO {
