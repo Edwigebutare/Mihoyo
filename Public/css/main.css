@@ -128,3 +128,45 @@ footer {
     color: #666;
     font-size: 14px;
 }
+
+.cards-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    width: 200px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+    text-align: center;
+    position: relative;
+    background: #fff;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+}
+
+.card-name {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.card-options {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+}
+
+.card-options a {
+    margin-left: 5px;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+

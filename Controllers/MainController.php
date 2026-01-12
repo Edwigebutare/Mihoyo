@@ -35,6 +35,7 @@ class MainController
          $other = $service->getPersonnageById('id_qui_nexiste_pas');
 
         echo $this->templates->render('home', [
+            'gameName' => 'Genshin Impact',
             'listPersonnage' => $listPersonnage,
             'first' => $first,
             'other' => $other
