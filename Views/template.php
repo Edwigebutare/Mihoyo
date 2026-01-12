@@ -13,18 +13,23 @@
     <!-- Menu -->
     <nav>
         <div class="menu">
-            <a href="/home.php">Accueil</a>
+            <a href="index.php">Accueil</a>
+            <a href="index.php?action=add-perso">Ajouter un personnage</a>
+            <a href="index.php?action=add-perso-element">Ajouter un élément </a>
+            <a href="index.php?action=logs">Logs</a>
+            <a href="index.php?action=login">Login</a>
         </div>
     </nav>
 </header>
-<!-- #contenu -->
+
+<!-- Contenu -->
 <main id="contenu">
-<?=$this->section('content')?>
+    <?= $this->section('content') ?>
 </main>
+
 <footer>
- <p> <?= date('Y') ?> - Projet Mihoyo | IUT Dijon-Auxerre</p>
+    <p><?= date('Y') ?> - Projet Mihoyo | IUT Dijon-Auxerre</p>
 </footer>
 
 </body>
-
 </html>

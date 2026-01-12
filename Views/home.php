@@ -10,8 +10,8 @@
             <img src="<?= htmlspecialchars($p->getUrlImg()) ?>" alt="<?= htmlspecialchars($p->getName()) ?>">
             <div class="card-name"><?= htmlspecialchars($p->getName()) ?></div>
             <div class="card-options">
-                <a href="#">✏️</a>
-                <a href="#">🗑️</a>
+                <a href="index.php?action=edit-perso&id=<?= $this->e($p->getId()) ?>">✏️</a>
+                <a href="index.php?action=del-perso&id=<?= $this->e($p->getId()) ?>">🗑️</a>
             </div>
         </div>
     <?php endforeach; ?>
