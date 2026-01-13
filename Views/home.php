@@ -5,14 +5,28 @@
 
 <h2>Liste des personnages</h2>
 <div class="cards-container">
-    <?php foreach($listPersonnage as $p): ?>
+    <?php foreach ($listPersonnage as $p): ?>
         <div class="card">
-            <img src="<?= htmlspecialchars($p->getUrlImg()) ?>" alt="<?= htmlspecialchars($p->getName()) ?>">
-            <div class="card-name"><?= htmlspecialchars($p->getName()) ?></div>
+
+            <img src="<?= htmlspecialchars($p->getUrlImg()) ?>"
+                 alt="<?= htmlspecialchars($p->getName()) ?>">
+
+            <div class="card-name">
+                <?= htmlspecialchars($p->getName()) ?>
+            </div>
+
+            <div class="card-info">
+                <p><strong>Élément :</strong> <?= htmlspecialchars($p->getElement()) ?></p>
+                <p><strong>Arme :</strong> <?= htmlspecialchars($p->getUnitclass()) ?></p>
+                <p><strong>Origine :</strong> <?= htmlspecialchars($p->getOrigin()) ?></p>
+                <p><strong>Rareté :</strong> <?= str_repeat('★', (int)$p->getRarity()) ?></p>
+            </div>
+
             <div class="card-options">
                 <a href="index.php?action=edit-perso&id=<?= $this->e($p->getId()) ?>">✏️</a>
                 <a href="index.php?action=del-perso&id=<?= $this->e($p->getId()) ?>">🗑️</a>
             </div>
+
         </div>
     <?php endforeach; ?>
 </div>

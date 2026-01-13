@@ -15,7 +15,7 @@
         <div class="menu">
             <a href="index.php">Accueil</a>
             <a href="index.php?action=add-perso">Ajouter un personnage</a>
-            <a href="index.php?action=add-perso-element">Ajouter un élément </a>
+            <a href="index.php?action=add-element">Ajouter un élément </a>
             <a href="index.php?action=logs">Logs</a>
             <a href="index.php?action=login">Login</a>
         </div>

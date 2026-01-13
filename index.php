@@ -1,8 +1,17 @@
 <?php
+declare(strict_types=1);
 
 // Charger le fichier l'autoloader
 require_once __DIR__ . '/Helpers/Psr4AutoloaderClass.php';
-
+require_once __DIR__ . '/Vendor/Plates/src/Engine.php';
+require_once __DIR__ . '/Controllers/MainController.php';
+require_once __DIR__ . '/Controllers/PersoController.php';
+require_once __DIR__ . '/Controllers/Router/Route.php';
+require_once __DIR__ . '/Controllers/Router/Route/RouteAddPerso.php';
+// Import du moteur de template plates
+use League\Plates\Engine;
+use Controllers\MainController;
+use Controllers\Router\Router;
 // Créer une instance de l'autoloader
 $loader = new Helpers\Psr4AutoloaderClass();
 
@@ -20,14 +29,5 @@ $loader->addNamespace('\Service','/Service');
 // Namespace Config
 $loader->addNamespace('\Config','/Config');
 
-// Import du moteur de template plates
-use League\Plates\Engine;
-
-// Initialisation de l'engine avec le dossier Views
-$engine = new Engine(__DIR__ . '/Views');
-
-// Appel du contrôleur principal
-use Controllers\MainController;
-$controller = new MainController($engine);
-// Appel de la méthode index pour afficher la page
-$controller->index();
+$router = new Router('action');
+$router->routing($_GET, $_POST);
