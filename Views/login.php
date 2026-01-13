@@ -1,1 +1,5 @@
-<h1> Login </h1>
+
+<h<?php
+$this->layout('template', ['title' => 'Login']);
+?>
+1> Login </h1>
